@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Evolve — Personal Growth Dashboard</title>
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar">
+    <div class="navbar__left">
+      <div class="navbar__logo-mark">E</div>
+      <span class="navbar__brand">Evolve<span>.</span></span>
+    </div>
+    <div class="navbar__right">
+      <span class="navbar__greeting">Hey, <strong>Aman</strong> 👋</span>
+      <span class="navbar__date" id="navDate">—</span>
+      <div class="navbar__avatar">A</div>
+    </div>
+  </nav>
+
+  <!-- ===== APP SHELL ===== -->
+  <div class="app-shell">
+
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="sidebar">
+
+      <span class="sidebar__section-label">Overview</span>
+
+
+      <div class="sidebar__item active" data-target="dashboard">
+        <span class="sidebar__icon">🏠</span>
+        <span>Dashboard</span>
+      </div>
+      <div class="sidebar__item" data-target="history">
+        <span class="sidebar__icon">⏳</span>
+        <span>History</span>
+      </div>
+
+      <div class="sidebar__divider"></div>
+
+      <span class="sidebar__section-label">Trackers</span>
+
+      <div class="sidebar__item" data-target="academics">
+        <span class="sidebar__icon">📚</span>
+        <span>Academics</span>
+      </div>
+
+      <div class="sidebar__item" data-target="fitness">
+        <span class="sidebar__icon">🏋️</span>
+        <span>Fitness</span>
+      </div>
+
+      <div class="sidebar__item" data-target="skincare">
+        <span class="sidebar__icon">✨</span>
+        <span>Skincare</span>
+      </div>
+
+      <div class="sidebar__item" data-target="sleep">
+        <span class="sidebar__icon">🌙</span>
+        <span>Sleep & Recovery</span>
+      </div>
+
+      <div class="sidebar__item" data-target="nutrition">
+        <span class="sidebar__icon">🥗</span>
+        <span>Nutrition</span>
+      </div>
+
+      <div class="sidebar__item" data-target="mood">
+        <span class="sidebar__icon">🧠</span>
+        <span>Mental Health</span>
+      </div>
+
+      <div class="sidebar__item" data-target="habits">
+        <span class="sidebar__icon">🔥</span>
+        <span>Habit Streaks</span>
+        <span class="sidebar__badge">7</span>
+      </div>
+
+      <div class="sidebar__divider"></div>
+
+      <div class="sidebar__footer">
+        <div class="sidebar__item" data-target="settings">
+          <span class="sidebar__icon">⚙️</span>
+          <span>Settings</span>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="main-content">
+
+      <!-- DASHBOARD -->
+      <section class="page-section active" id="dashboard">
+        <div class="page-header">
+          <div class="page-header__eyebrow">Overview</div>
+          <h1 class="page-header__title">Good morning, Aman ☀️</h1>
+          <p class="page-header__subtitle">Here's your growth snapshot for today. Keep showing up.</p>
+        </div>
+        <div class="global-goals-card">
+          <div class="global-goals-info">
+            <h2>Weekly Overview</h2>
+            <p>All Categories</p>
+            <div class="stats-row">
+              <span>Total Goals: 24</span>
+              <span>Completed: 16</span>
+            </div>
+          </div>
+          <div class="pie-chart-container">
+            <div class="pie-chart global-pie" style="--percentage: 66%;"></div>
+            <span class="pie-label">66%</span>
+          </div>
+        </div>
+        <div class="dashboard-grid">
+          
+          <div class="dashboard-card">
+            <div class="dashboard-card-header">
+              <div class="dashboard-card-icon" style="background: var(--accent-soft); color: var(--accent-primary);">📚</div>
+              <span class="dashboard-card-title">Academics</span>
+            </div>
+            <div class="dashboard-card-body">
+              <div class="progress-wrapper">
+                <div class="progress-info">
+                  <span>Cyber Physical Systems</span>
+                  <span>75%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 75%; background: var(--accent-primary);"></div>
+                </div>
+              </div>
+              <div class="stat-row mt-16">
+                <span class="stat-label">Today's Study</span>
+                <span class="stat-value">2h 15m</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="dashboard-card">
+            <div class="dashboard-card-header">
+              <div class="dashboard-card-icon" style="background: #DCFCE7; color: var(--accent-green);">🏋️</div>
+              <span class="dashboard-card-title">Fitness</span>
+            </div>
+            <div class="dashboard-card-body">
+              <div class="stat-row">
+                <span class="stat-label">Weekly Target</span>
+                <span class="stat-value">4 / 5 Days</span>
+              </div>
+              <div class="tag-container mt-16">
+                <span class="tag active">Push</span>
+                <span class="tag active">Pull</span>
+                <span class="tag active">Legs</span>
+                <span class="tag">Cardio</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="dashboard-card">
+            <div class="dashboard-card-header">
+              <div class="dashboard-card-icon" style="background: #FDF4FF; color: var(--accent-purple);">✨</div>
+              <span class="dashboard-card-title">Skincare</span>
+            </div>
+            <div class="dashboard-card-body">
+              <div class="stat-row">
+                <span class="stat-label">AM Routine</span>
+                <span class="stat-value" style="color: var(--accent-green);">Done ✓</span>
+              </div>
+              <div class="stat-row">
+                <span class="stat-label">PM Routine</span>
+                <span class="stat-value text-muted">Pending</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="dashboard-card">
+            <div class="dashboard-card-header">
+              <div class="dashboard-card-icon" style="background: #EFF6FF; color: var(--accent-blue);">🌙</div>
+              <span class="dashboard-card-title">Sleep & Recovery</span>
+            </div>
+            <div class="dashboard-card-body">
+              <div class="progress-wrapper">
+                <div class="progress-info">
+                  <span>Last Night</span>
+                  <span>7h 20m</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 85%; background: var(--accent-blue);"></div>
+                </div>
+              </div>
+              <div class="stat-row mt-16">
+                <span class="stat-label">Recovery Score</span>
+                <span class="stat-value">88/100</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="dashboard-card">
+            <div class="dashboard-card-header">
+              <div class="dashboard-card-icon" style="background: #FFF7ED; color: var(--accent-amber);">🥗</div>
+              <span class="dashboard-card-title">Nutrition</span>
+            </div>
+            <div class="dashboard-card-body">
+              <div class="stat-row">
+                <span class="stat-label">Calories</span>
+                <span class="stat-value">1,850 kcal</span>
+              </div>
+              <div class="stat-row">
+                <span class="stat-label">Water Intake</span>
+                <span class="stat-value">2.5 / 3L</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="dashboard-card">
+            <div class="dashboard-card-header">
+              <div class="dashboard-card-icon" style="background: #FFF1F2; color: var(--accent-rose);">🧠</div>
+              <span class="dashboard-card-title">Mental Health</span>
+            </div>
+            <div class="dashboard-card-body">
+              <div class="stat-row">
+                <span class="stat-label">Today's Mood</span>
+                <span class="stat-value">Good 😌</span>
+              </div>
+              <div class="stat-row">
+                <span class="stat-label">Energy Level</span>
+                <span class="stat-value">High ⚡</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="dashboard-card">
+            <div class="dashboard-card-header">
+              <div class="dashboard-card-icon" style="background: #FFF8ED; color: #EA580C;">🔥</div>
+              <span class="dashboard-card-title">Habit Streaks</span>
+            </div>
+            <div class="dashboard-card-body">
+               <div class="progress-wrapper">
+                <div class="progress-info">
+                  <span>The Odin Project</span>
+                  <span>14 Days 🔥</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 100%; background: #EA580C;"></div>
+                </div>
+              </div>
+              <div class="stat-row mt-16">
+                <span class="stat-label">LeetCode</span>
+                <span class="stat-value">5 Days 🔥</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        </section>
+<section class="page-section" id="history">
+        <div class="page-header">
+          <div class="page-header__eyebrow">Overview</div>
+          <h1 class="page-header__title">History ⏳</h1>
+          <p class="page-header__subtitle">Review your past weekly goals and performance.</p>
+        </div>
+        <div class="history-grid">
+          <div class="history-card">
+            <h3>Week of June 1 - June 7</h3>
+            <div class="pie-chart-container">
+              <div class="pie-chart history-pie" style="--percentage: 82%;"></div>
+              <span class="pie-label">82%</span>
+            </div>
+          </div>
+          <div class="history-card">
+            <h3>Week of May 25 - May 31</h3>
+            <div class="pie-chart-container">
+              <div class="pie-chart history-pie" style="--percentage: 70%;"></div>
+              <span class="pie-label">70%</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ACADEMICS -->
+      <section class="page-section" id="academics">
+        <div class="page-header">
+          <div class="page-header__eyebrow">Tracker</div>
+          <h1 class="page-header__title">Academics 📚</h1>
+          <p class="page-header__subtitle">Manage your subjects, monitor syllabus milestones, and log study sessions.</p>
+        </div>
+        <div class="category-goals-section">
+          <div class="goals-chart-card">
+            <h3>Academics Goals</h3>
+            <div class="pie-chart-container">
+              <div class="pie-chart category-pie" style="--percentage: 75%;"></div>
+              <span class="pie-label">75%</span>
+            </div>
+          </div>
+          <div class="daily-goals-list">
+            <h3>Today's Goals</h3>
+            <div class="goal-item completed">
+              <input type="checkbox" checked readonly>
+              <span>Complete Odin Project JS DOM module</span>
+            </div>
+            <div class="goal-item">
+              <input type="checkbox" readonly>
+              <span>Solve 2 Graph problems on LeetCode</span>
+            </div>
+            <div class="goal-item">
+              <input type="checkbox" readonly>
+              <span>Revise Cyber Physical Systems Unit 3</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="academics-stats">
+          <div class="stat-card">
+            <span class="stat-card-label">Total Study Time</span>
+            <span class="stat-card-value">42.5h</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-card-label">Syllabus Completed</span>
+            <span class="stat-card-value">68%</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-card-label">Current Streak</span>
+            <span class="stat-card-value">12 Days</span>
+          </div>
+        </div>
+
+        <div class="academics-layout">
+          <div class="subjects-container">
+            <div class="subject-card">
+              <div class="subject-card-header">
+                <div>
+                  <h3 class="subject-name">Data Structures & Algorithms</h3>
+                  <span class="subject-code">CSE2001</span>
+                </div>
+                <span class="subject-percentage">80%</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 80%; background: var(--accent-primary);"></div>
+              </div>
+              <div class="subject-meta">
+                <span>12 / 15 Topics Clear</span>
+                <button class="btn-action">Update</button>
+              </div>
+            </div>
+
+            <div class="subject-card">
+              <div class="subject-card-header">
+                <div>
+                  <h3 class="subject-name">Object-Oriented Programming</h3>
+                  <span class="subject-code">CSE2002</span>
+                </div>
+                <span class="subject-percentage">65%</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 65%; background: var(--accent-purple);"></div>
+              </div>
+              <div class="subject-meta">
+                <span>11 / 17 Topics Clear</span>
+                <button class="btn-action">Update</button>
+              </div>
+            </div>
+
+            <div class="subject-card">
+              <div class="subject-card-header">
+                <div>
+                  <h3 class="subject-name">Cyber Physical Systems</h3>
+                  <span class="subject-code">ECE3005</span>
+                </div>
+                <span class="subject-percentage">75%</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 75%; background: var(--accent-sky);"></div>
+              </div>
+              <div class="subject-meta">
+                <span>9 / 12 Topics Clear</span>
+                <button class="btn-action">Update</button>
+              </div>
+            </div>
+
+            <div class="subject-card">
+              <div class="subject-card-header">
+                <div>
+                  <h3 class="subject-name">Web Development</h3>
+                  <span class="subject-code">Odin Project</span>
+                </div>
+                <span class="subject-percentage">50%</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 50%; background: var(--accent-teal);"></div>
+              </div>
+              <div class="subject-meta">
+                <span>24 / 48 Lessons Clear</span>
+                <button class="btn-action">Update</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="study-log-container">
+            <div class="log-card">
+              <h3 class="log-card-title">Log Study Session</h3>
+              <form class="log-form" id="studyLogForm" onsubmit="event.preventDefault();">
+                <div class="form-group">
+                  <label class="form-label">Subject</label>
+                  <select class="form-input" id="logSubject">
+                    <option>Data Structures & Algorithms</option>
+                    <option>Object-Oriented Programming</option>
+                    <option>Cyber Physical Systems</option>
+                    <option>Web Development</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Duration (Minutes)</label>
+                  <input type="number" class="form-input" id="logDuration" placeholder="e.g. 90">
+                </div>
+                <button type="button" class="btn-submit" id="logSessionBtn">Log Session</button>
+              </form>
+
+              <div class="recent-logs">
+                <h4 class="recent-logs-title">Recent Sessions</h4>
+                <div class="log-list" id="logList">
+                  <div class="log-item">
+                    <div class="log-item-info">
+                      <span class="log-item-subject">Data Structures & Algorithms</span>
+                      <span class="log-item-date">Today</span>
+                    </div>
+                    <span class="log-item-duration">2h 15m</span>
+                  </div>
+                  <div class="log-item">
+                    <div class="log-item-info">
+                      <span class="log-item-subject">Web Development</span>
+                      <span class="log-item-date">Yesterday</span>
+                    </div>
+                    <span class="log-item-duration">1h 45m</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- FITNESS -->
+      <section class="page-section" id="fitness">
+        <div class="page-header">
+          <div class="page-header__eyebrow">Tracker</div>
+          <h1 class="page-header__title">Fitness 🏋️</h1>
+          <p class="page-header__subtitle">Log your workouts and monitor your physical growth.</p>
+        </div>
+
+        <div class="category-goals-section">
+          <div class="goals-chart-card">
+            <h3>Fitness Goals</h3>
+            <div class="pie-chart-container">
+              <div class="pie-chart" style="background: conic-gradient(var(--accent-green) 40%, var(--bg-elevated) 0);"></div>
+              <span class="pie-label">40%</span>
+            </div>
+          </div>
+          <div class="daily-goals-list">
+            <h3>Today's Workout</h3>
+            <div class="goal-item completed">
+              <input type="checkbox" checked readonly>
+              <span>10k Steps</span>
+            </div>
+            <div class="goal-item">
+              <input type="checkbox" readonly>
+              <span>Push Day Workout (Chest/Triceps/Shoulders)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="fitness-layout">
+          <div class="workout-logger">
+            <h3>Log Workout</h3>
+            <form class="log-form" onsubmit="event.preventDefault();">
+              <div class="form-group">
+                <label class="form-label">Workout Type</label>
+                <select class="form-input">
+                  <option>Push</option>
+                  <option>Pull</option>
+                  <option>Legs</option>
+                  <option>Cardio</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Duration (Mins)</label>
+                <input type="number" class="form-input" placeholder="e.g. 60">
+              </div>
+              <button class="btn-submit">Save Workout</button>
+            </form>
+          </div>
+          <div class="workout-history">
+            <h3>Recent Logs</h3>
+            <div class="log-list">
+              <div class="log-item">
+                <div class="log-item-info">
+                  <span class="log-item-subject">Legs</span>
+                  <span class="log-item-date">Yesterday</span>
+                </div>
+                <span class="log-item-duration">1h 15m</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SKINCARE --><section class="page-section" id="skincare">
+        <div class="page-header">
+          <div class="page-header__eyebrow">Tracker</div>
+          <h1 class="page-header__title">Skincare ✨</h1>
+          <p class="page-header__subtitle">Log your AM/PM routines and track skin health.</p>
+        </div>
+        <div class="category-goals-section">
+          <div class="goals-chart-card">
+            <h3>Skincare Goals</h3>
+            <div class="pie-chart-container">
+              <div class="pie-chart" style="background: conic-gradient(var(--accent-purple) 100%, var(--bg-elevated) 0);"></div>
+              <span class="pie-label">100%</span>
+            </div>
+          </div>
+          <div class="daily-goals-list">
+            <h3>Today's Routine</h3>
+            <div class="goal-item completed">
+              <input type="checkbox" checked readonly>
+              <span>AM: Cleanser, Vit C, Moisturizer, SPF</span>
+            </div>
+            <div class="goal-item">
+              <input type="checkbox" readonly>
+              <span>PM: Double Cleanse, Retinol, Moisturizer</span>
+            </div>
+          </div>
+        </div>
+        <div class="skincare-layout">
+           <div class="routine-card">
+             <h3>Log AM Routine</h3>
+             <form class="log-form" onsubmit="event.preventDefault();">
+               <div class="form-group">
+                 <label class="form-label">Steps Completed</label>
+                 <select class="form-input" multiple style="height: 100px;">
+                   <option>Cleanser</option>
+                   <option>Toner</option>
+                   <option>Serum</option>
+                   <option>Moisturizer</option>
+                   <option>Sunscreen</option>
+                 </select>
+               </div>
+               <button class="btn-submit">Save AM Routine</button>
+             </form>
+           </div>
+           <div class="routine-card">
+             <h3>Skin Status</h3>
+             <form class="log-form" onsubmit="event.preventDefault();">
+               <div class="form-group">
+                 <label class="form-label">Hydration Level</label>
+                 <input type="range" class="slider" min="1" max="10" value="7">
+               </div>
+               <div class="form-group">
+                 <label class="form-label">Notes</label>
+                 <input type="text" class="form-input" placeholder="Skin feels clear today">
+               </div>
+               <button class="btn-submit" style="background: var(--accent-purple);">Log Status</button>
+             </form>
+           </div>
+        </div>
+      </section>
+
+      <section class="page-section" id="sleep">
+        <div class="page-header">
+          <div class="page-header__eyebrow">Tracker</div>
+          <h1 class="page-header__title">Sleep & Recovery 🌙</h1>
+          <p class="page-header__subtitle">Monitor sleep duration, quality, and recovery scores.</p>
+        </div>
+        <div class="category-goals-section">
+          <div class="goals-chart-card">
+            <h3>Sleep Goals</h3>
+            <div class="pie-chart-container">
+              <div class="pie-chart" style="background: conic-gradient(var(--accent-blue) 85%, var(--bg-elevated) 0);"></div>
+              <span class="pie-label">85%</span>
+            </div>
+          </div>
+          <div class="daily-goals-list">
+            <h3>Sleep Targets</h3>
+            <div class="goal-item completed">
+              <input type="checkbox" checked readonly>
+              <span>In bed by 11:30 PM</span>
+            </div>
+            <div class="goal-item">
+              <input type="checkbox" readonly>
+              <span>7.5+ Hours of Sleep</span>
+            </div>
+          </div>
+        </div>
+        <div class="sleep-layout">
+          <div class="sleep-logger">
+            <h3>Log Last Night</h3>
+            <form class="log-form" onsubmit="event.preventDefault();">
+              <div class="form-group">
+                <label class="form-label">Hours Slept</label>
+                <input type="number" step="0.5" class="form-input" placeholder="e.g. 7.5">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Quality (1-100)</label>
+                <input type="number" class="form-input" placeholder="e.g. 85">
+              </div>
+              <button class="btn-submit" style="background: var(--accent-blue);">Save Sleep Data</button>
+            </form>
+          </div>
+          <div class="sleep-stats">
+            <h3>Recovery Metrics</h3>
+            <div class="recovery-circle">
+              <span class="recovery-score">88</span>
+              <span class="recovery-label">Great</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="page-section" id="nutrition">
+        <div class="page-header">
+          <div class="page-header__eyebrow">Tracker</div>
+          <h1 class="page-header__title">Nutrition 🥗</h1>
+          <p class="page-header__subtitle">Track daily meals, macros, hydration, and eating habits.</p>
+        </div>
+        <div class="category-goals-section">
+          <div class="goals-chart-card">
+            <h3>Nutrition Goals</h3>
+            <div class="pie-chart-container">
+              <div class="pie-chart" style="background: conic-gradient(var(--accent-amber) 60%, var(--bg-elevated) 0);"></div>
+              <span class="pie-label">60%</span>
+            </div>
+          </div>
+          <div class="daily-goals-list">
+            <h3>Today's Intake</h3>
+            <div class="goal-item completed">
+              <input type="checkbox" checked readonly>
+              <span>Hit 120g Protein</span>
+            </div>
+            <div class="goal-item">
+              <input type="checkbox" readonly>
+              <span>Drink 3L Water</span>
+            </div>
+          </div>
+        </div>
+        <div class="nutrition-layout">
+          <div class="macros-card">
+            <h3>Daily Macros</h3>
+            <div class="macro-bars">
+              <div class="progress-wrapper">
+                <div class="progress-info">
+                  <span>Protein (120g / 150g)</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 80%; background: var(--accent-rose);"></div>
+                </div>
+              </div>
+              <div class="progress-wrapper mt-16">
+                <div class="progress-info">
+                  <span>Carbs (200g / 250g)</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 80%; background: var(--accent-amber);"></div>
+                </div>
+              </div>
+              <div class="progress-wrapper mt-16">
+                <div class="progress-info">
+                  <span>Fats (50g / 70g)</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 71%; background: var(--accent-teal);"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="water-card">
+            <h3>Water Tracker</h3>
+            <div class="water-grid">
+              <div class="water-glass active">💧</div>
+              <div class="water-glass active">💧</div>
+              <div class="water-glass active">💧</div>
+              <div class="water-glass active">💧</div>
+              <div class="water-glass active">💧</div>
+              <div class="water-glass">💧</div>
+              <div class="water-glass">💧</div>
+              <div class="water-glass">💧</div>
+            </div>
+            <p class="text-sm mt-16 text-muted">5 / 8 Glasses (1.25L)</p>
+          </div>
+        </div>
+      </section>
+      <!-- MOOD -->
+      <section class="page-section" id="mood">
+        <div class="page-header">
+          <div class="page-header__eyebrow">Tracker</div>
+          <h1 class="page-header__title">Mental Health 🧠</h1>
+          <p class="page-header__subtitle">Log your daily mood, energy levels, and journal your thoughts.</p>
+        </div>
+
+        <div class="category-goals-section">
+          <div class="goals-chart-card">
+            <h3>Mood Goals</h3>
+            <div class="pie-chart-container">
+              <div class="pie-chart" style="background: conic-gradient(var(--accent-rose) 100%, var(--bg-elevated) 0);"></div>
+              <span class="pie-label">100%</span>
+            </div>
+          </div>
+          <div class="daily-goals-list">
+            <h3>Daily Check-in</h3>
+            <div class="goal-item completed">
+              <input type="checkbox" checked readonly>
+              <span>Morning Gratitude</span>
+            </div>
+            <div class="goal-item">
+              <input type="checkbox" readonly>
+              <span>Evening Reflection Journal</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mood-layout">
+          <div class="mood-logger-card">
+            <h3>How are you feeling?</h3>
+            <form class="log-form" onsubmit="event.preventDefault();">
+              <div class="mood-selector">
+                <div class="mood-emoji active">🤩</div>
+                <div class="mood-emoji">🙂</div>
+                <div class="mood-emoji">😐</div>
+                <div class="mood-emoji">😔</div>
+                <div class="mood-emoji">😫</div>
+              </div>
+              <div class="form-group mt-16">
+                <label class="form-label">Energy Level</label>
+                <select class="form-input">
+                  <option>High ⚡</option>
+                  <option>Medium 🔋</option>
+                  <option>Low 🪫</option>
+                </select>
+              </div>
+              <div class="form-group mt-16">
+                <label class="form-label">Journal Entry</label>
+                <textarea class="form-input" rows="4" placeholder="What's on your mind today?"></textarea>
+              </div>
+              <button class="btn-submit mt-16" style="background: var(--accent-rose);">Save Entry</button>
+            </form>
+          </div>
+
+          <div class="mood-history-card">
+            <h3>Recent Reflections</h3>
+            <div class="journal-list">
+              <div class="journal-item">
+                <div class="journal-header">
+                  <span class="journal-date">Yesterday, 8:30 PM</span>
+                  <span class="journal-mood">🙂 Medium</span>
+                </div>
+                <p class="journal-text">Had a productive day knocking out some coding modules. Felt a bit tired in the evening but went for a walk to clear my head.</p>
+              </div>
+              <div class="journal-item">
+                <div class="journal-header">
+                  <span class="journal-date">Monday, 9:00 PM</span>
+                  <span class="journal-mood">🤩 High</span>
+                </div>
+                <p class="journal-text">Great workout session and managed to solve a hard algorithm problem. Feeling unstoppable!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- HABITS -->
+     <section class="page-section" id="habits">
+        <div class="page-header">
+          <div class="page-header__eyebrow">Tracker</div>
+          <h1 class="page-header__title">Habit Streaks 🔥</h1>
+          <p class="page-header__subtitle">Build powerful habits, track streaks, and stay consistent.</p>
+        </div>
+
+        <div class="habits-layout">
+          <div class="habits-list-card">
+            <div class="habits-header-row">
+              <h3>Active Habits</h3>
+              <button class="btn-action">+ New Habit</button>
+            </div>
+            
+            <div class="habit-item">
+              <div class="habit-info">
+                <span class="habit-name">The Odin Project</span>
+                <span class="habit-streak">14 Days 🔥</span>
+              </div>
+              <div class="habit-week">
+                <div class="habit-day completed">M</div>
+                <div class="habit-day completed">T</div>
+                <div class="habit-day completed">W</div>
+                <div class="habit-day completed">T</div>
+                <div class="habit-day completed">F</div>
+                <div class="habit-day">S</div>
+                <div class="habit-day">S</div>
+              </div>
+            </div>
+
+            <div class="habit-item">
+              <div class="habit-info">
+                <span class="habit-name">LeetCode Grind</span>
+                <span class="habit-streak">5 Days 🔥</span>
+              </div>
+              <div class="habit-week">
+                <div class="habit-day completed">M</div>
+                <div class="habit-day completed">T</div>
+                <div class="habit-day completed">W</div>
+                <div class="habit-day completed">T</div>
+                <div class="habit-day completed">F</div>
+                <div class="habit-day">S</div>
+                <div class="habit-day">S</div>
+              </div>
+            </div>
+
+            <div class="habit-item">
+              <div class="habit-info">
+                <span class="habit-name">Read 10 Pages</span>
+                <span class="habit-streak">0 Days</span>
+              </div>
+              <div class="habit-week">
+                <div class="habit-day">M</div>
+                <div class="habit-day">T</div>
+                <div class="habit-day">W</div>
+                <div class="habit-day">T</div>
+                <div class="habit-day">F</div>
+                <div class="habit-day">S</div>
+                <div class="habit-day">S</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="habit-stats-card">
+            <h3>Streak Overview</h3>
+            <div class="streak-stat-box">
+              <span class="streak-stat-value" style="color: #EA580C;">14</span>
+              <span class="streak-stat-label">Longest Streak</span>
+            </div>
+            <div class="streak-stat-box mt-16">
+              <span class="streak-stat-value" style="color: var(--accent-primary);">85%</span>
+              <span class="streak-stat-label">Weekly Consistency</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SETTINGS -->
+      <section class="page-section" id="settings">
+        <div class="page-header">
+          <div class="page-header__eyebrow">App</div>
+          <h1 class="page-header__title">Settings ⚙️</h1>
+          <p class="page-header__subtitle">Customize your Evolve experience.</p>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
