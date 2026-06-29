@@ -319,12 +319,8 @@
 
         <div class="academics-stats">
           <div class="stat-card">
-            <span class="stat-card-label">Total Study Time</span>
-            <span class="stat-card-value">42.5h</span>
-          </div>
-          <div class="stat-card">
-            <span class="stat-card-label">Syllabus Completed</span>
-            <span class="stat-card-value">68%</span>
+            <span class="stat-card-label">Weekly Study Time</span>
+            <span class="stat-card-value" id="weeklyStudyTime">0h / 30h Target</span>
           </div>
           <div class="stat-card">
             <span class="stat-card-label">Current Streak</span>
@@ -333,23 +329,39 @@
         </div>
 
         <div class="academics-layout">
-          <div class="subjects-container">
-            <div class="subject-card">
-              <div class="subject-card-header">
-                <div>
-                  <h3 class="subject-name">Data Structures & Algorithms</h3>
-                  <span class="subject-code">CSE2001</span>
+          <div class="subjects-wrapper" style="display: flex; flex-direction: column; gap: 20px;">
+            <div class="subjects-header" style="display: flex; gap: 12px;">
+              <input type="text" id="newSubjectInput" class="form-input" placeholder="Enter new subject name..." style="flex: 1;">
+              <button id="addSubjectBtn" class="btn-submit">Add Subject</button>
+            </div>
+            <div class="subjects-container" id="subjectsContainer">
+            </div>
+          </div>
+
+          <div class="study-log-container">
+            <div class="log-card">
+              <h3 class="log-card-title">Log Study Session</h3>
+              <form class="log-form" id="studyLogForm" onsubmit="event.preventDefault();">
+                <div class="form-group">
+                  <label class="form-label">Subject</label>
+                  <select class="form-input" id="logSubject">
+                  </select>
                 </div>
-                <span class="subject-percentage">80%</span>
-              </div>
-              <div class="progress-bar">
-                <div class="progress-fill" style="width: 80%; background: var(--accent-primary);"></div>
-              </div>
-              <div class="subject-meta">
-                <span>12 / 15 Topics Clear</span>
-                <button class="btn-action">Update</button>
+                <div class="form-group">
+                  <label class="form-label">Duration (Minutes)</label>
+                  <input type="number" class="form-input" id="logDuration" placeholder="e.g. 90">
+                </div>
+                <button type="button" class="btn-submit" id="logSessionBtn">Log Session</button>
+              </form>
+
+              <div class="recent-logs">
+                <h4 class="recent-logs-title">Recent Sessions</h4>
+                <div class="log-list" id="logList">
+                </div>
               </div>
             </div>
+          </div>
+        </div>
 
             <div class="subject-card">
               <div class="subject-card-header">
