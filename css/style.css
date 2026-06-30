@@ -1374,3 +1374,28 @@ textarea.form-input {
   background: #FECACA;
   transform: scale(1.05);
 }
+.academics-planner-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1.5fr;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+@media (max-width: 1024px) {
+  .academics-planner-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.weekly-planner-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.weekly-planner-card h3 {
+  font-size: var(--font-md);
+  font-weight: 700;
+}

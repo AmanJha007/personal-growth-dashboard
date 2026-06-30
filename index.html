@@ -292,28 +292,40 @@
           <h1 class="page-header__title">Academics 📚</h1>
           <p class="page-header__subtitle">Manage your subjects, monitor syllabus milestones, and log study sessions.</p>
         </div>
-        <div class="category-goals-section">
+        <div class="academics-planner-layout">
           <div class="goals-chart-card">
-            <h3>Academics Goals</h3>
-            <div class="pie-chart-container">
-              <div class="pie-chart category-pie" style="--percentage: 75%;"></div>
-              <span class="pie-label">75%</span>
+            <h3>Weekly Progress</h3>
+            <div class="pie-chart-container" style="margin-top: 16px;">
+              <div class="pie-chart category-pie" id="academicsPie" style="--percentage: 0%;"></div>
+              <span class="pie-label" id="academicsPieLabel">0%</span>
             </div>
           </div>
           <div class="daily-goals-list">
-            <h3>Today's Goals</h3>
-            <div class="goal-item completed">
-              <input type="checkbox" checked readonly>
-              <span>Complete Odin Project JS DOM module</span>
-            </div>
-            <div class="goal-item">
-              <input type="checkbox" readonly>
-              <span>Solve 2 Graph problems on LeetCode</span>
-            </div>
-            <div class="goal-item">
-              <input type="checkbox" readonly>
-              <span>Revise Cyber Physical Systems Unit 3</span>
-            </div>
+            <h3>Today's Goals (<span id="currentDayLabel"></span>)</h3>
+            <div id="todaysGoalsContainer" class="mt-16"></div>
+          </div>
+          <div class="weekly-planner-card">
+            <h3>Plan Weekly Task</h3>
+            <form class="log-form mt-16" id="planTaskForm">
+              <div class="form-group">
+                <select class="form-input" id="planTaskDay">
+                  <option>Monday</option>
+                  <option>Tuesday</option>
+                  <option>Wednesday</option>
+                  <option>Thursday</option>
+                  <option>Friday</option>
+                  <option>Saturday</option>
+                  <option>Sunday</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <select class="form-input" id="planTaskSubject"></select>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-input" id="planTaskName" placeholder="Task (e.g. JS DOM Module)">
+              </div>
+              <button type="button" class="btn-submit" id="addTaskBtn">Save to Week</button>
+            </form>
           </div>
         </div>
 
